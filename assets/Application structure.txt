@@ -1,0 +1,446 @@
+  
+  هيكل التطبيق وهيكل ملف قاعدة البيانات
+
+  هيكل التطبيق
+📦lib
+ ┣ 📂core
+ ┃ ┣ 📂constants
+ ┃ ┃ ┣ 📜app_constants.dart
+ ┃ ┃ ┣ 📜app_routes.dart
+ ┃ ┃ ┣ 📜database_constants.dart
+ ┃ ┃ ┣ 📜screen_size.dart
+ ┃ ┃ ┣ 📜string_formatter.dart
+ ┃ ┃ ┗ 📜theme_constants.dart
+ ┃ ┣ 📂pages
+ ┃ ┃ ┣ 📜about_us_page.dart
+ ┃ ┃ ┣ 📜home_page.dart
+ ┃ ┃ ┣ 📜learning_home.dart
+ ┃ ┃ ┣ 📜profile_page.dart
+ ┃ ┃ ┣ 📜quizzes_home.dart
+ ┃ ┃ ┗ 📜settings_page.dart
+ ┃ ┣ 📂users
+ ┃ ┃ ┣ 📜auth_provider.dart
+ ┃ ┃ ┣ 📜exceptions.dart
+ ┃ ┃ ┣ 📜registration_login_widget.dart
+ ┃ ┃ ┣ 📜user_data_manager.dart
+ ┃ ┃ ┗ 📜user_provider.dart
+ ┃ ┗ 📂widgets
+ ┃ ┃ ┣ 📜category_filter_widget.dart
+ ┃ ┃ ┣ 📜confirmation_dialog.dart
+ ┃ ┃ ┣ 📜custom_app_bar.dart
+ ┃ ┃ ┣ 📜custom_button.dart
+ ┃ ┃ ┣ 📜custom_gradient.dart
+ ┃ ┃ ┣ 📜custom_navigation_bar.dart
+ ┃ ┃ ┣ 📜custom_text_field.dart
+ ┃ ┃ ┣ 📜edit_profile_form.dart
+ ┃ ┃ ┣ 📜profile_header.dart
+ ┃ ┃ ┗ 📜profile_options.dart
+ ┣ 📂data
+ ┃ ┗ 📜database_helper.dart
+ ┣ 📂Learning_section
+ ┃ ┣ 📂pages
+ ┃ ┃ ┣ 📜adjectives_page.dart
+ ┃ ┃ ┣ 📜compound_words_page.dart
+ ┃ ┃ ┣ 📜nouns_page.dart
+ ┃ ┃ ┗ 📜verb_conjugation_page.dart
+ ┃ ┣ 📂providers
+ ┃ ┃ ┣ 📜adjective_provider.dart
+ ┃ ┃ ┣ 📜audio_service_provider.dart
+ ┃ ┃ ┣ 📜compound_word_provider.dart
+ ┃ ┃ ┣ 📜noun_provider.dart
+ ┃ ┃ ┣ 📜verb_conjugation_provider.dart
+ ┃ ┃ ┗ 📜verb_conjugation_state.dart
+ ┃ ┗ 📂widgets
+ ┃ ┃ ┣ 📜adjective_card.dart
+ ┃ ┃ ┣ 📜adjective_list.dart
+ ┃ ┃ ┣ 📜compound_word_card.dart
+ ┃ ┃ ┣ 📜conjugation_card.dart
+ ┃ ┃ ┣ 📜noun_card.dart
+ ┃ ┃ ┗ 📜noun_list.dart
+ ┣ 📂models
+ ┃ ┣ 📜adjective_model.dart
+ ┃ ┣ 📜compound_word_model.dart
+ ┃ ┣ 📜image_segment_model.dart
+ ┃ ┣ 📜nouns_model.dart
+ ┃ ┣ 📜sentence_model.dart
+ ┃ ┣ 📜user_model.dart
+ ┃ ┗ 📜verb_conjugations_models.dart
+ ┣ 📂quizzes_section
+ ┃ ┣ 📂nouns_quizzes
+ ┃ ┃ ┣ 📂pages
+ ┃ ┃ ┃ ┣ 📜choose_noun_image_correct_page.dart
+ ┃ ┃ ┃ ┗ 📜choose_noun_word_correct_page.dart
+ ┃ ┃ ┗ 📂providers
+ ┃ ┃ ┃ ┣ 📜choose_image_correct_provider.dart
+ ┃ ┃ ┃ ┗ 📜choose_word_correct_provider.dart
+ ┃ ┣ 📂sentence_quizzes
+ ┃ ┃ ┣ 📂pages
+ ┃ ┃ ┃ ┗ 📜arrange_sentence_page.dart
+ ┃ ┃ ┣ 📂providers
+ ┃ ┃ ┃ ┣ 📜arrange_sentence_provider.dart
+ ┃ ┃ ┃ ┗ 📜arrange_sentence_state.dart
+ ┃ ┃ ┗ 📂widgets
+ ┃ ┃ ┃ ┣ 📜current_sentence_display.dart
+ ┃ ┃ ┃ ┣ 📜feedback_message.dart
+ ┃ ┃ ┃ ┣ 📜progress_indicator.dart
+ ┃ ┃ ┃ ┗ 📜sentence_segment_grid.dart
+ ┃ ┣ 📂shared_quizzes
+ ┃ ┃ ┣ 📂providers
+ ┃ ┃ ┃ ┗ 📜quiz_provider.dart
+ ┃ ┃ ┗ 📂widgets
+ ┃ ┃ ┃ ┣ 📜answers_options_element.dart
+ ┃ ┃ ┃ ┣ 📜correct_wrong_message.dart
+ ┃ ┃ ┃ ┣ 📜generic_quiz_page.dart
+ ┃ ┃ ┃ ┣ 📜image_display_with_audio.dart
+ ┃ ┃ ┃ ┣ 📜next_question_button.dart
+ ┃ ┃ ┃ ┣ 📜question_element.dart
+ ┃ ┃ ┃ ┣ 📜quiz_content_layout.dart
+ ┃ ┃ ┃ ┣ 📜quiz_progress.dart
+ ┃ ┃ ┃ ┣ 📜quiz_settings_dialog.dart
+ ┃ ┃ ┃ ┣ 📜quiz_widget_helpers.dart
+ ┃ ┃ ┃ ┗ 📜show_answer_button.dart
+ ┃ ┗ 📂verb_quizzes
+ ┗ 📜main.dart
+ملفات اختبار Choose Word Correct:
+
+choose_word_correct_page.dart:
+
+ChooseWordCorrectPage: هي الشاشة التي يعرض فيها اختبار اختيار الكلمة الصحيحة للمستخدم، وتحتوي على واجهة المستخدم الخاصة بالاختبار.
+
+routeName: هو الاسم الفريد الذي يُستخدم لتعريف مسار هذه الشاشة في نظام التنقل داخل التطبيق، مما يسمح بالانتقال إليها من أماكن أخرى.
+
+chooseWordQuizStateProvider: يوفر الوصول إلى البيانات المتعلقة بحالة الاختبار (مثل السؤال الحالي، الإجابات، النتيجة) ويسمح بتحديثها بناءً على تفاعل المستخدم.
+
+chooseWordQuizCategoryProvider: يحتفظ بالفئة التي تم اختيارها لعرض أسئلة الاختبار منها، مما يسمح بتصفية الكلمات حسب التصنيف.
+
+chooseWordQuizSettingsProvider: يخزن إعدادات المستخدم الخاصة باختبار اختيار الكلمة الصحيحة، مثل تفضيل تشغيل الصوت تلقائيًا.
+
+CustomAppBar: هو شريط علوي مخصص يظهر في أعلى الشاشة ويحتوي على عنوان الاختبار وأزرار التحكم.
+
+IconButton: هو زر بسيط يحتوي على أيقونة، يُستخدم لتنفيذ إجراء معين عند الضغط عليه، مثل الرجوع للخلف.
+
+ConfirmationDialog: هو مربع حوار يظهر ليطلب من المستخدم تأكيد إجراء حساس، مثل الخروج من الاختبار.
+
+CategoryFilterDropdown: هي قائمة منسدلة تسمح للمستخدم باختيار فئة الكلمات التي يرغب في التدرب عليها في الاختبار.
+
+CustomGradient: يوفر خلفية ملونة متدرجة للشاشة لإضفاء مظهر جمالي.
+
+BaseQuizScreen: هو هيكل أساسي وقابل لإعادة الاستخدام لشاشات الاختبارات، يوفر تنسيقًا عامًا لعرض السؤال والخيارات والنتيجة.
+
+Padding: يضيف مساحة فارغة حول عنصر واجهة المستخدم لتحسين التباعد والتنظيم البصري.
+
+GestureDetector: يكتشف تفاعلات اللمس على عنصر واجهة المستخدم، مما يسمح بتنفيذ إجراءات عند النقر أو السحب.
+
+QuestionElement: يعرض سؤال الاختبار، والذي في هذه الحالة يتضمن صورة للكلمة.
+
+IgnorePointer: يجعل عنصر واجهة المستخدم غير قابل للتفاعل مع لمسات المستخدم، ويستخدم لتعطيل الخيارات في أوقات معينة.
+
+WordsAnswersOptions: يعرض خيارات الإجابة المتاحة للمستخدم على شكل أزرار نصية.
+
+CircularProgressIndicator: يعرض مؤشرًا متحركًا للدلالة على أن هناك عملية تحميل جارية.
+
+Text: يعرض نصًا ثابتًا على الشاشة، مثل العناوين أو التعليمات.
+
+choose_word_correct_provider.dart:
+
+chooseWordQuizSettingsProvider: يوفر طريقة للوصول إلى إعدادات اختبار الكلمة الصحيحة وتعديلها، ويحتفظ بقيم هذه الإعدادات.
+
+ChooseWordCorrectProvider: هو نموذج بيانات بسيط يحتوي على جميع المعلومات الضرورية لحالة اختبار اختيار الكلمة الصحيحة في لحظة معينة.
+
+NounsMatchingQuizState: يدير منطق العمل الخاص باختبار اختيار الكلمة الصحيحة، بما في ذلك تحميل الأسئلة، والتحقق من الإجابات، وتحديث النتيجة.
+
+chooseWordQuizCategoryProvider: يوفر طريقة للوصول إلى الفئة المختارة للاختبار وتعديلها، مما يؤثر على مجموعة الأسئلة المعروضة.
+
+audioPlayerProvider: يوفر الوصول إلى خدمة تشغيل الصوت داخل التطبيق، مما يسمح بتشغيل أصوات الكلمات.
+
+nounsProvider: يوفر الوصول إلى قائمة الكلمات المتاحة في التطبيق، والتي تُستخدم لتوليد أسئلة الاختبار.
+
+chooseWordQuizStateProvider: يوفر طريقة للوصول إلى مدير حالة الاختبار (NounsMatchingQuizState) من أي مكان في التطبيق.
+
+initialNouns: يحتفظ بالقائمة الأصلية لجميع الكلمات قبل تطبيق أي تصفية أو ترتيب.
+
+initialPlayAudioAutomatically: يحتفظ بالقيمة الأولية لإعداد تشغيل الصوت تلقائيًا عند بدء تشغيل الاختبار.
+
+dialog_choose_word_correct.dart:
+
+DialogChooseWordCorrect: هو مربع الحوار الذي يظهر للمستخدم لضبط إعدادات اختبار اختيار الكلمة الصحيحة.
+
+ChooseWordQuizSettingsState: يدير حالة واجهة المستخدم لمربع حوار خيارات اختبار الكلمة الصحيحة، ويتتبع اختيارات المستخدم.
+
+chooseWordQuizSettingsProvider: يوفر الوصول إلى إعدادات اختبار الكلمة الصحيحة التي يتم عرضها في مربع الحوار.
+
+AlertDialog: هو النافذة الأساسية لمربع الحوار التي تظهر فوق محتوى الشاشة الحالي.
+
+Center: يقوم بتوسيط العناصر الموجودة بداخله أفقيًا ورأسيًا.
+
+Text: يعرض نصًا ثابتًا داخل مربع الحوار، مثل العنوان أو التعليمات.
+
+Padding: يضيف مساحة فارغة حول العناصر داخل مربع الحوار.
+
+Column: يرتب العناصر الموجودة بداخله بشكل عمودي.
+
+CheckboxListTile: هو عنصر قائمة يحتوي على مربع اختيار يسمح للمستخدم بتفعيل أو تعطيل خيار معين.
+
+SizedBox: يضيف مساحة فارغة بارتفاع وعرض محددين داخل مربع الحوار.
+
+RoundedRectangleBorder: يحدد شكل حدود العناصر داخل مربع الحوار بزوايا دائرية.
+
+ElevatedButton: هو زر قابل للنقر مع ظل مرتفع، يُستخدم لتنفيذ إجراءات مثل الحفظ أو الإلغاء.
+
+words_answers_options.dart:
+
+WordsAnswersOptions: هي ودجت قابلة لإعادة الاستخدام لعرض زر يمثل خيار إجابة نصي.
+
+text: هو النص الذي يظهر على زر الإجابة.
+
+onTap: هي الدالة التي يتم استدعاؤها عند نقر المستخدم على زر الإجابة.
+
+isCorrect: يشير إلى ما إذا كانت هذه الإجابة هي الإجابة الصحيحة، مما يؤثر على تصميم الزر.
+
+isWrong: يشير إلى ما إذا كانت هذه الإجابة هي إجابة خاطئة تم اختيارها، مما يؤثر على تصميم الزر.
+
+fontSize: يحدد حجم الخط لنص الإجابة.
+
+borderRadius: يحدد مدى استدارة زوايا زر الإجابة.
+
+elevation: يحدد ارتفاع ظل زر الإجابة.
+
+isDisabled: يشير إلى ما إذا كان زر الإجابة معطلاً ولا يمكن النقر عليه.
+
+base_quiz_screen.dart:
+
+BaseQuizScreen: يوفر هيكلًا قياسيًا لشاشات الاختبارات، يتضمن عرض السؤال، وخيارات الإجابة، ومعلومات التقدم.
+
+title: هو عنوان الاختبار الذي يظهر في الجزء العلوي من الشاشة.
+
+questionWidget: هو عنصر واجهة المستخدم الذي يعرض سؤال الاختبار الحالي.
+
+answerOptions: هي قائمة بعناصر واجهة المستخدم التي تمثل خيارات الإجابة المتاحة.
+
+score: هو عدد الإجابات الصحيحة التي أجاب عليها المستخدم حتى الآن.
+
+answeredQuestions: هو عدد الأسئلة التي أجاب عليها المستخدم بالفعل.
+
+totalQuestions: هو العدد الإجمالي للأسئلة في الاختبار الحالي.
+
+isCorrect: يشير إلى ما إذا كانت الإجابة الأخيرة التي اختارها المستخدم صحيحة.
+
+isWrong: يشير إلى ما إذا كانت الإجابة الأخيرة التي اختارها المستخدم خاطئة.
+
+onResetQuiz: هي الدالة التي يتم استدعاؤها عندما يقرر المستخدم إعادة تعيين الاختبار.
+
+optionsType: يحدد نوع خيارات الإجابة المعروضة (إما كلمات أو صور).
+
+leading: هو عنصر واجهة المستخدم الذي يظهر في بداية شريط التطبيق العلوي.
+
+actions: هي قائمة بعناصر واجهة المستخدم التي تظهر في نهاية شريط التطبيق العلوي.
+
+optionsAspectRatio: يحدد نسبة العرض إلى الارتفاع لعناصر خيارات الإجابة.
+
+optionsCrossAxisCount: يحدد عدد الأعمدة في شبكة عرض خيارات الإجابة.
+
+topInfoHeight: يحدد ارتفاع الجزء العلوي من الشاشة الذي يعرض معلومات التقدم.
+
+questionWidgetHeight: يحدد ارتفاع عنصر واجهة المستخدم الذي يعرض السؤال.
+
+optionsSpacing: يحدد المسافة بين عناصر خيارات الإجابة.
+
+correctMessageFontSize: يحدد حجم الخط لرسالة "إجابة صحيحة!".
+
+baseQuizPadding: يحدد المسافة الداخلية العامة حول محتوى شاشة الاختبار.
+
+bottomPadding: يحدد المسافة الفارغة في الجزء السفلي من شاشة الاختبار.
+
+ملفات اختبار Choose Image Correct:
+
+choose_image_correct_page.dart:
+
+ChooseImageCorrectPage: هي الشاشة التي يعرض فيها اختبار اختيار الصورة الصحيحة للمستخدم.
+
+routeName: هو الاسم الفريد لمسار هذه الشاشة في نظام التنقل.
+
+quizOptionsProvider: يوفر الوصول إلى خيارات المستخدم لاختبار اختيار الصورة، مثل عرض النص وتشغيل الصوت.
+
+chooseImageQuizStateProvider: يدير حالة اختبار اختيار الصورة الصحيحة، بما في ذلك الأسئلة والإجابات والنتيجة.
+
+chooseImageQuizCategoryProvider: يحتفظ بالفئة التي تم اختيارها لعرض أسئلة اختبار الصور منها.
+
+بقية المسميات (مثل CustomAppBar, IconButton, ConfirmationDialog, CategoryFilterDropdown, CustomGradient, BaseQuizScreen, Padding, GestureDetector, QuestionElement, IgnorePointer, Center, CircularProgressIndicator, Text) لها نفس وظائفها المذكورة في شرح ملف choose_word_correct_page.dart.
+
+ImagesAnswersOptions: يعرض خيارات الإجابة المتاحة للمستخدم على شكل صور.
+
+choose_image_correct_provider.dart:
+
+chooseImageQuizSettingsProvider: يوفر طريقة للوصول إلى إعدادات اختبار اختيار الصورة الصحيحة وتعديلها.
+
+ChooseImageCorrectProvider: هو نموذج بيانات يحتوي على معلومات حالة اختبار اختيار الصورة الصحيحة.
+
+ChooseImageQuizState: يدير منطق العمل الخاص باختبار اختيار الصورة الصحيحة.
+
+chooseImageQuizCategoryProvider: يوفر طريقة للوصول إلى فئة الصور المختارة وتعديلها.
+
+quizOptionsProvider: يوفر طريقة للوصول إلى خيارات اختبار اختيار الصورة الصحيحة وتعديلها.
+
+بقية المسميات (مثل audioPlayerProvider, nounsProvider, chooseImageQuizStateProvider) لها نفس وظائفها المذكورة في شرح ملف choose_word_correct_provider.dart.
+
+initialNouns: يحتفظ بالقائمة الأصلية لجميع الصور قبل التصفية.
+
+initialShowText: يحتفظ بالقيمة الأولية لخيار عرض النص مع الصورة.
+
+initialPlayAudioAutomatically: يحتفظ بالقيمة الأولية لإعداد تشغيل الصوت تلقائيًا عند بدء تشغيل الاختبار.
+
+dialog_choose_image_correct.dart:
+
+DialogChooseImageCorrect: هو مربع الحوار الذي يظهر للمستخدم لضبط إعدادات اختبار اختيار الصورة الصحيحة.
+
+ChooseImageQuizSettingsState: يدير حالة واجهة المستخدم لمربع حوار خيارات اختبار الصورة الصحيحة.
+
+quizOptionsProvider: يوفر الوصول إلى خيارات اختبار اختيار الصورة الصحيحة التي يتم عرضها في مربع الحوار.
+
+بقية المسميات (مثل AlertDialog, Center, Text, Padding, Column, CheckboxListTile, SizedBox, RoundedRectangleBorder, ElevatedButton) لها نفس وظائفها المذكورة في شرح ملف dialog_choose_word_correct.dart.
+
+images_answers_options.dart:
+
+ImagesAnswersOptions: هي ودجت قابلة لإعادة الاستخدام لعرض صورة تمثل خيار إجابة.
+
+imageData: هي البيانات الثنائية للصورة التي سيتم عرضها.
+
+onTap: هي الدالة التي يتم استدعاؤها عند نقر المستخدم على الصورة.
+
+isCorrect: يشير إلى ما إذا كانت هذه الصورة تمثل الإجابة الصحيحة.
+
+isWrong: يشير إلى ما إذا كانت هذه الصورة تمثل إجابة خاطئة تم اختيارها.
+
+borderRadius: يحدد مدى استدارة زوايا الصورة.
+
+shadowBlurRadius: يحدد مقدار الضبابية للظل حول الصورة.
+
+shadowOffset: يحدد موضع الظل بالنسبة للصورة.
+
+isDisabled: يشير إلى ما إذا كانت الصورة معطلة ولا يمكن النقر عليها.
+   وهيكل ملف قاعدة البيانات
+
+learning_spiders_database.db
+
+Table: sqlite_sequence
+  Column: name - Type:
+  Column: seq - Type:
+
+Table: reading_and_listening
+  Column: id - Type: INTEGER
+  Column: title - Type: TEXT
+  Column: content - Type: TEXT
+  Column: sound - Type: BLOB
+  Column: translation - Type: TEXT
+  Column: type - Type: TEXT
+
+Table: verb_conjugations
+  Column: id - Type: INTEGER
+  Column: base_form - Type: TEXT
+  Column: translation - Type: TEXT
+  Column: past_form - Type: TEXT
+  Column: p_p_form - Type: TEXT
+  Column: verb_type - Type: TEXT
+  Column: base_pronunciation - Type: BLOB
+  Column: past_pronunciation - Type: BLOB
+  Column: pp_pronunciation - Type: BLOB
+  Indexes:
+    Index Name: sqlite_autoindex_verb_conjugations_1
+      Column: base_form
+
+Table: expressions_idioms
+  Column: id - Type: INTEGER
+  Column: expression - Type: TEXT
+  Column: meaning - Type: TEXT
+  Column: example - Type: TEXT
+  Column: usage - Type: TEXT
+  Column: type - Type: TEXT
+  Column: audio - Type: BLOB
+  Indexes:
+    Index Name: sqlite_autoindex_expressions_idioms_1
+      Column: expression
+
+Table: english_sentences
+  Column: id - Type: INTEGER
+  Column: sentence - Type: TEXT
+  Column: answer - Type: TEXT
+  Column: translation - Type: TEXT
+
+Table: modal_semi_modal_verbs
+  Column: id - Type: INTEGER
+  Column: main - Type: TEXT
+  Column: example - Type: TEXT
+  Column: tense - Type: TEXT
+  Column: type - Type: TEXT
+  Column: translation - Type: TEXT
+
+Table: verbs_seeds
+  Column: id - Type: INTEGER
+  Column: seed_word - Type: TEXT
+  Column: translations - Type: TEXT
+  Column: examples - Type: TEXT
+  Column: audio - Type: BLOB
+  Indexes:
+    Index Name: sqlite_autoindex_verbs_seeds_1
+      Column: seed_word
+
+Table: verbs_branches
+  Column: id - Type: INTEGER
+  Column: seed_id - Type: INTEGER
+  Column: similar_word - Type: TEXT
+  Column: translations - Type: TEXT
+  Column: examples - Type: TEXT
+  Column: audio - Type: BLOB
+
+Table: phrasal_verbs
+  Column: id - Type: INTEGER
+  Column: expression - Type: TEXT
+  Column: main_verb - Type: TEXT
+  Column: particle - Type: TEXT
+  Column: meaning - Type: TEXT
+  Column: example - Type: TEXT
+  Column: translation - Type: TEXT
+  Column: audio - Type: BLOB
+
+Table: image_description
+  Column: id - Type: INTEGER
+  Column: description - Type: TEXT
+  Column: image - Type: BLOB
+  Column: audio - Type: BLOB
+
+Table: default_assets
+  Column: id - Type: INTEGER
+  Column: category - Type: TEXT
+  Column: image - Type: BLOB
+  Column: audio - Type: BLOB
+
+Table: nouns
+  Column: id - Type: INTEGER
+  Column: name - Type: TEXT
+  Column: image - Type: BLOB
+  Column: audio - Type: BLOB
+  Column: category - Type: TEXT
+
+Table: adjectives
+  Column: id - Type: INTEGER
+  Column: main_adjective - Type: TEXT
+  Column: main_example - Type: TEXT
+  Column: reverse_adjective - Type: TEXT
+  Column: reverse_example - Type: TEXT
+  Column: main_adjective_audio - Type: BLOB
+  Column: reverse_adjective_audio - Type: BLOB
+  Column: main_example_audio - Type: BLOB
+  Column: reverse_example_audio - Type: BLOB
+
+Table: compound_words
+  Column: id - Type: INTEGER
+  Column: main - Type: TEXT
+  Column: part1 - Type: TEXT
+  Column: part2 - Type: TEXT
+  Column: example - Type: TEXT
+  Column: main_audio - Type: BLOB
+  Column: example_audio - Type: BLOB
+  Indexes:
+    Index Name: sqlite_autoindex_compound_words_1
+      Column: main
+ 

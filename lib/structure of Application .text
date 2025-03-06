@@ -1,0 +1,235 @@
+structure of Application
+
+📦lib
+ ┣ 📂core
+ ┃ ┣ 📂config
+ ┃ ┃ ┣ 📜app_constants.dart
+ ┃ ┃ ┣ 📜app_routes.dart
+ ┃ ┃ ┣ 📜button_styles.dart
+ ┃ ┃ ┣ 📜database_constants.dart
+ ┃ ┃ ┣ 📜screen_size.dart
+ ┃ ┃ ┗ 📜theme.dart
+ ┃ ┣ 📂di
+ ┃ ┃ ┣ 📜app_blocs.dart
+ ┃ ┃ ┗ 📜app_dependencies.dart
+ ┃ ┣ 📂screens
+ ┃ ┃ ┣ 📜about_us_screen.dart
+ ┃ ┃ ┣ 📜games_home_screen.dart
+ ┃ ┃ ┣ 📜learning_home_screen.dart
+ ┃ ┃ ┣ 📜main_screen.dart
+ ┃ ┃ ┣ 📜profile_screen.dart
+ ┃ ┃ ┣ 📜quizzes_home_screen.dart
+ ┃ ┃ ┗ 📜settings_screen.dart
+ ┃ ┣ 📂services
+ ┃ ┃ ┗ 📜audio_service.dart
+ ┃ ┣ 📂theme
+ ┃ ┃ ┣ 📜theme_cubit.dart
+ ┃ ┃ ┗ 📜theme_state.dart
+ ┃ ┣ 📂ui
+ ┃ ┃ ┣ 📂forms
+ ┃ ┃ ┃ ┣ 📜custom_text_field.dart
+ ┃ ┃ ┃ ┣ 📜registration_login_widget.dart
+ ┃ ┃ ┃ ┗ 📜search_field.dart
+ ┃ ┃ ┣ 📂settings
+ ┃ ┃ ┃ ┣ 📜settings_body.dart
+ ┃ ┃ ┃ ┣ 📜settings_card.dart
+ ┃ ┃ ┃ ┣ 📜settings_option.dart
+ ┃ ┃ ┃ ┗ 📜volume_slider_tile.dart
+ ┃ ┃ ┣ 📂shared
+ ┃ ┃ ┃ ┣ 📜audio_type.dart
+ ┃ ┃ ┃ ┣ 📜bounce_animation.dart
+ ┃ ┃ ┃ ┣ 📜category_filter.dart
+ ┃ ┃ ┃ ┣ 📜category_selector.dart
+ ┃ ┃ ┃ ┣ 📜category_title.dart
+ ┃ ┃ ┃ ┣ 📜confirmation_dialog.dart
+ ┃ ┃ ┃ ┣ 📜custom_app_bar.dart
+ ┃ ┃ ┃ ┣ 📜custom_button.dart
+ ┃ ┃ ┃ ┣ 📜custom_gradient.dart
+ ┃ ┃ ┃ ┗ 📜error_display.dart
+ ┃ ┃ ┗ 📂text
+ ┃ ┃ ┃ ┣ 📜string_extensions.dart
+ ┃ ┃ ┃ ┣ 📜string_formatter.dart
+ ┃ ┃ ┃ ┗ 📜styled_text.dart
+ ┃ ┗ 📂user_profile
+ ┃ ┃ ┣ 📜edit_profile_form.dart
+ ┃ ┃ ┣ 📜login_registration_section.dart
+ ┃ ┃ ┣ 📜option_tile.dart
+ ┃ ┃ ┣ 📜profile_header.dart
+ ┃ ┃ ┣ 📜profile_options.dart
+ ┃ ┃ ┣ 📜profile_page_content.dart
+ ┃ ┃ ┣ 📜quiz_result_card.dart
+ ┃ ┃ ┣ 📜quiz_type_card.dart
+ ┃ ┃ ┣ 📜user_cubit.dart
+ ┃ ┃ ┗ 📜user_state.dart
+ ┣ 📂data
+ ┃ ┣ 📂database
+ ┃ ┃ ┗ 📜database_helper.dart
+ ┃ ┣ 📂models
+ ┃ ┃ ┣ 📜adjective_model.dart
+ ┃ ┃ ┣ 📜compound_word_model.dart
+ ┃ ┃ ┣ 📜displayable_item.dart
+ ┃ ┃ ┣ 📜image_segment_model.dart
+ ┃ ┃ ┣ 📜modal_semi_modal_verb_model.dart
+ ┃ ┃ ┣ 📜nouns_model.dart
+ ┃ ┃ ┣ 📜phrasal_verb_model.dart
+ ┃ ┃ ┣ 📜quiz_result_model.dart
+ ┃ ┃ ┣ 📜sentence_model.dart
+ ┃ ┃ ┣ 📜similar_words_models.dart
+ ┃ ┃ ┣ 📜user_model.dart
+ ┃ ┃ ┗ 📜verb_conjugations_models.dart
+ ┃ ┗ 📂repositories
+ ┃ ┃ ┣ 📜adjective_repository.dart
+ ┃ ┃ ┣ 📜base_repository.dart
+ ┃ ┃ ┣ 📜compound_word_repository.dart
+ ┃ ┃ ┣ 📜generic_repository.dart
+ ┃ ┃ ┣ 📜modal_semi_modal_verb_repository.dart
+ ┃ ┃ ┣ 📜noun_repository.dart
+ ┃ ┃ ┣ 📜phrasal_verb_repository.dart
+ ┃ ┃ ┣ 📜quiz_result_repository.dart
+ ┃ ┃ ┣ 📜similar_words_repository.dart
+ ┃ ┃ ┣ 📜user_repository.dart
+ ┃ ┃ ┗ 📜verb_conjugations_repository.dart
+ ┣ 📂Games
+ ┃ ┗ 📂image_word_matching
+ ┃ ┃ ┣ 📂bloc
+ ┃ ┃ ┃ ┣ 📜image_word_matching_bloc.dart
+ ┃ ┃ ┃ ┣ 📜image_word_matching_event.dart
+ ┃ ┃ ┃ ┗ 📜image_word_matching_state.dart
+ ┃ ┃ ┣ 📂models
+ ┃ ┃ ┃ ┣ 📜card_data.dart
+ ┃ ┃ ┃ ┗ 📜matching_pair.dart
+ ┃ ┃ ┗ 📂ui
+ ┃ ┃ ┃ ┣ 📜card_widget.dart
+ ┃ ┃ ┃ ┗ 📜image_word_screen.dart
+ ┣ 📂Learning
+ ┃ ┣ 📂adjectives
+ ┃ ┃ ┣ 📂bloc
+ ┃ ┃ ┃ ┣ 📜learn_adjective_bloc.dart
+ ┃ ┃ ┃ ┣ 📜learn_adjective_event.dart
+ ┃ ┃ ┃ ┗ 📜learn_adjective_state.dart
+ ┃ ┃ ┗ 📂ui
+ ┃ ┃ ┃ ┣ 📜adjectives_screen.dart
+ ┃ ┃ ┃ ┗ 📜adjective_card.dart
+ ┃ ┣ 📂compound_words
+ ┃ ┃ ┣ 📂bloc
+ ┃ ┃ ┃ ┣ 📜learn_compound_word_bloc.dart
+ ┃ ┃ ┃ ┣ 📜learn_compound_word_event.dart
+ ┃ ┃ ┃ ┗ 📜learn_compound_word_state.dart
+ ┃ ┃ ┗ 📂ui
+ ┃ ┃ ┃ ┣ 📜compound_words_screen.dart
+ ┃ ┃ ┃ ┗ 📜compound_word_card.dart
+ ┃ ┣ 📂learn_similar_words
+ ┃ ┃ ┣ 📂bloc
+ ┃ ┃ ┃ ┣ 📜learn_similar_words_bloc.dart
+ ┃ ┃ ┃ ┣ 📜learn_similar_words_event.dart
+ ┃ ┃ ┃ ┗ 📜learn_similar_words_state.dart
+ ┃ ┃ ┗ 📂ui
+ ┃ ┃ ┃ ┣ 📜similar_words_screen.dart
+ ┃ ┃ ┃ ┗ 📜similar_word_card.dart
+ ┃ ┣ 📂modal_semi_modal_verbs
+ ┃ ┃ ┣ 📂bloc
+ ┃ ┃ ┃ ┣ 📜learn_modal_semi_modal_verb_bloc.dart
+ ┃ ┃ ┃ ┣ 📜learn_modal_semi_modal_verb_event.dart
+ ┃ ┃ ┃ ┗ 📜learn_modal_semi_modal_verb_state.dart
+ ┃ ┃ ┗ 📂ui
+ ┃ ┃ ┃ ┣ 📜modal_semi_modal_verbs_screen.dart
+ ┃ ┃ ┃ ┗ 📜modal_semi_modal_verb_card.dart
+ ┃ ┣ 📂nouns
+ ┃ ┃ ┣ 📂bloc
+ ┃ ┃ ┃ ┣ 📜learn_noun_bloc.dart
+ ┃ ┃ ┃ ┣ 📜learn_noun_events.dart
+ ┃ ┃ ┃ ┗ 📜learn_noun_state.dart
+ ┃ ┃ ┗ 📂ui
+ ┃ ┃ ┃ ┣ 📜empty_state_display.dart
+ ┃ ┃ ┃ ┣ 📜image_section.dart
+ ┃ ┃ ┃ ┣ 📜name_overlay.dart
+ ┃ ┃ ┃ ┣ 📜nouns_screen.dart
+ ┃ ┃ ┃ ┣ 📜noun_card.dart
+ ┃ ┃ ┃ ┣ 📜noun_content.dart
+ ┃ ┃ ┃ ┗ 📜responsive_grid_view.dart
+ ┃ ┣ 📂phrasal_verbs
+ ┃ ┃ ┣ 📂bloc
+ ┃ ┃ ┃ ┣ 📜learn_phrasal_verb_bloc.dart
+ ┃ ┃ ┃ ┣ 📜learn_phrasal_verb_event.dart
+ ┃ ┃ ┃ ┗ 📜learn_phrasal_verb_state.dart
+ ┃ ┃ ┗ 📂ui
+ ┃ ┃ ┃ ┣ 📜phrasal_verbs_screen.dart
+ ┃ ┃ ┃ ┗ 📜phrasal_verb_card.dart
+ ┃ ┣ 📂shared
+ ┃ ┃ ┗ 📂item_card
+ ┃ ┃ ┃ ┣ 📜audio_button.dart
+ ┃ ┃ ┃ ┣ 📜expandable_item_card.dart
+ ┃ ┃ ┃ ┣ 📜item_card_header.dart
+ ┃ ┃ ┃ ┣ 📜item_details.dart
+ ┃ ┃ ┃ ┗ 📜item_detail_row.dart
+ ┃ ┗ 📂verb_conjugations
+ ┃ ┃ ┣ 📂bloc
+ ┃ ┃ ┃ ┣ 📜verb_conjugations_bloc.dart
+ ┃ ┃ ┃ ┣ 📜verb_conjugations_event.dart
+ ┃ ┃ ┃ ┗ 📜verb_conjugations_state.dart
+ ┃ ┃ ┗ 📂ui
+ ┃ ┃ ┃ ┣ 📜verb_card.dart
+ ┃ ┃ ┃ ┣ 📜verb_conjugations_screen.dart
+ ┃ ┃ ┃ ┗ 📜verb_list.dart
+ ┣ 📂quizzes
+ ┃ ┣ 📂collect_compound_words
+ ┃ ┃ ┣ 📂bloc
+ ┃ ┃ ┃ ┣ 📜collect_compound_words_bloc.dart
+ ┃ ┃ ┃ ┣ 📜collect_compound_words_event.dart
+ ┃ ┃ ┃ ┗ 📜collect_compound_words_state.dart
+ ┃ ┃ ┗ 📂ui
+ ┃ ┃ ┃ ┗ 📜collect_compound_words_screen.dart
+ ┃ ┣ 📂collect_phrasal_verb
+ ┃ ┃ ┣ 📂bloc
+ ┃ ┃ ┃ ┣ 📜collect_phrasal_verbs_bloc.dart
+ ┃ ┃ ┃ ┣ 📜collect_phrasal_verbs_event.dart
+ ┃ ┃ ┃ ┗ 📜collect_phrasal_verbs_state.dart
+ ┃ ┃ ┗ 📂ui
+ ┃ ┃ ┃ ┗ 📜collect_phrasal_verbs_screen.dart
+ ┃ ┣ 📂collect_verb_conjugations
+ ┃ ┃ ┣ 📂bloc
+ ┃ ┃ ┃ ┣ 📜collect_verb_conjugations_bloc.dart
+ ┃ ┃ ┃ ┣ 📜collect_verb_conjugations_event.dart
+ ┃ ┃ ┃ ┗ 📜collect_verb_conjugations_state.dart
+ ┃ ┃ ┗ 📂ui
+ ┃ ┃ ┃ ┗ 📜collect_verb_conjugations_screen.dart
+ ┃ ┣ 📂nouns
+ ┃ ┃ ┣ 📂bloc
+ ┃ ┃ ┃ ┣ 📂choose_image_correct
+ ┃ ┃ ┃ ┃ ┣ 📜choose_image_correct_bloc.dart
+ ┃ ┃ ┃ ┃ ┣ 📜choose_image_correct_event.dart
+ ┃ ┃ ┃ ┃ ┗ 📜choose_image_correct_state.dart
+ ┃ ┃ ┃ ┗ 📂choose_word_correct
+ ┃ ┃ ┃ ┃ ┣ 📜choose_word_correct_bloc.dart
+ ┃ ┃ ┃ ┃ ┣ 📜choose_word_correct_event.dart
+ ┃ ┃ ┃ ┃ ┗ 📜choose_word_correct_state.dart
+ ┃ ┃ ┗ 📂ui
+ ┃ ┃ ┃ ┣ 📜choose_image_correct_screen.dart
+ ┃ ┃ ┃ ┗ 📜choose_word_correct_screen.dart
+ ┃ ┣ 📂sentence_quizzes
+ ┃ ┃ ┣ 📂bloc
+ ┃ ┃ ┃ ┣ 📜arrange_sentence_bloc.dart
+ ┃ ┃ ┃ ┣ 📜arrange_sentence_event.dart
+ ┃ ┃ ┃ ┗ 📜arrange_sentence_state.dart
+ ┃ ┃ ┗ 📂ui
+ ┃ ┃ ┃ ┣ 📜arrange_sentence_page.dart
+ ┃ ┃ ┃ ┣ 📜current_sentence_display.dart
+ ┃ ┃ ┃ ┣ 📜feedback_message.dart
+ ┃ ┃ ┃ ┗ 📜sentence_segment_grid.dart
+ ┃ ┗ 📂shared
+ ┃ ┃ ┣ 📜answers_options_element.dart
+ ┃ ┃ ┣ 📜correct_wrong_message.dart
+ ┃ ┃ ┣ 📜generic_answer_option.dart
+ ┃ ┃ ┣ 📜generic_quiz_page.dart
+ ┃ ┃ ┣ 📜question_element.dart
+ ┃ ┃ ┣ 📜quiz_content_layout.dart
+ ┃ ┃ ┣ 📜quiz_options_generator.dart
+ ┃ ┃ ┣ 📜quiz_option_tile.dart
+ ┃ ┃ ┣ 📜quiz_widget_helpers.dart
+ ┃ ┃ ┣ 📜show_answer_button.dart
+ ┃ ┃ ┗ 📜skip_question_button.dart
+ ┣ 📂z_important_unused_files
+ ┃ ┣ 📜image_display_with_audio.dart
+ ┃ ┗ 📜next_question_button.dart
+ ┣ 📜main.dart
+ ┗ 📜structure of Application .text
